@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="ZetsyBuy – Discover the perfect gifts. Trending Amazon gift ideas for birthdays, anniversaries, and special occasions." />
+  <meta name="keywords" content="gifts, amazon gifts, birthday gifts, anniversary gifts, custom gifts, affiliate gifts" />
+  <meta property="og:title" content="ZetsyBuy – Find Perfect Gifts" />
+  <meta property="og:description" content="Trending Amazon gift ideas curated just for you." />
+  <meta property="og:type" content="website" />
+
+  <title>ZetsyBuy – Find Perfect Gifts 🎁</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Particle Background -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <div class="page-wrap">
+
+    <!-- ============================================================
+         HEADER
+         ============================================================ -->
+    <header class="site-header">
+      <div class="header-inner">
+
+        <!-- Logo -->
+        <a href="/" class="logo" aria-label="ZetsyBuy Home">
+          <span class="logo-icon" aria-hidden="true">🎁</span>
+          <span class="logo-text">ZetsyBuy</span>
+        </a>
+
+        <!-- Search -->
+        <div class="search-wrap" role="search">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="searchInput"
+            placeholder="Search gifts, categories..."
+            aria-label="Search products"
+            autocomplete="off"
+            spellcheck="false"
+          />
+        </div>
+
+        <!-- Nav -->
+        <nav aria-label="Main navigation">
+          <ul class="nav-links">
+            <li><a href="#whatsapp-section">Order on WhatsApp</a></li>
+            <li><a href="#productsSection">All Gifts</a></li>
+            <li><a href="#" onclick="openModal('disclosure'); return false;">Affiliate Info</a></li>
+          </ul>
+        </nav>
+
+      </div>
+    </header>
+
+    <!-- ============================================================
+         SECTION 1 — WhatsApp Orders
+         ============================================================ -->
+    <section class="whatsapp-section" id="whatsapp-section" aria-labelledby="wa-heading">
+      <div class="section-header reveal">
+        <div class="section-tag">
+          <span class="pulse-dot" aria-hidden="true"></span>
+          Coming Soon
+        </div>
+        <h2 class="section-title" id="wa-heading">
+          Order on <span>WhatsApp</span>
+        </h2>
+        <p class="section-subtitle">
+          Personalised gift ordering via WhatsApp — launching very soon!
+        </p>
+      </div>
+
+      <div class="wa-cards-grid">
+
+        <!-- Birthday Gifts Card -->
+        <div class="wa-card reveal delay-1">
+          <span class="wa-card-icon" aria-hidden="true">🎂</span>
+          <h3 class="wa-card-title">Birthday Gifts</h3>
+          <p class="wa-card-desc">
+            Make someone's birthday unforgettable with handpicked, personalised gifts delivered to their door.
+          </p>
+          <button class="btn-coming-soon" aria-label="Birthday Gifts — Coming Soon" disabled>
+            ⏳ Coming Soon
+          </button>
+        </div>
+
+        <!-- Anniversary Gifts Card -->
+        <div class="wa-card reveal delay-2">
+          <span class="wa-card-icon" aria-hidden="true">💍</span>
+          <h3 class="wa-card-title">Anniversary Gifts</h3>
+          <p class="wa-card-desc">
+            Celebrate love and milestones with curated anniversary gift collections for every couple.
+          </p>
+          <button class="btn-coming-soon" aria-label="Anniversary Gifts — Coming Soon" disabled>
+            ⏳ Coming Soon
+          </button>
+        </div>
+
+        <!-- Custom Gifts Card -->
+        <div class="wa-card reveal delay-3">
+          <span class="wa-card-icon" aria-hidden="true">✨</span>
+          <h3 class="wa-card-title">Custom Gifts</h3>
+          <p class="wa-card-desc">
+            Fully customised gifts with personal messages, names, and designs — crafted just for you.
+          </p>
+          <button class="btn-coming-soon" aria-label="Custom Gifts — Coming Soon" disabled>
+            ⏳ Coming Soon
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 2 — Hero
+         ============================================================ -->
+    <section class="hero-section" aria-labelledby="hero-heading">
+      <div class="hero-eyebrow reveal">
+        ✦ Curated Amazon Gift Ideas ✦
+      </div>
+
+      <h1 class="hero-title reveal" id="hero-heading">
+        Find <span class="gold-word">Perfect</span><br/>Gifts
+      </h1>
+
+      <p class="hero-subtitle reveal delay-1">
+        Discover trending Amazon gift ideas for every occasion — birthdays, anniversaries, holidays & more.
+      </p>
+
+      <div class="scroll-cue reveal delay-2" aria-hidden="true">
+        <div class="scroll-line"></div>
+        <span>Explore gifts</span>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         SECTION 3 — Products Grid
+         ============================================================ -->
+    <section class="products-section" id="productsSection" aria-labelledby="products-heading">
+
+      <div class="products-header reveal">
+        <div>
+          <div class="section-tag">
+            <span aria-hidden="true">🛍️</span> Amazon Picks
+          </div>
+          <h2 class="section-title" id="products-heading" style="font-size:clamp(1.6rem,3vw,2.2rem);">
+            Trending <span>Gift Ideas</span>
+          </h2>
+          <p class="products-count" id="productCount">
+            Showing <span>0</span> gifts
+          </p>
+        </div>
+
+        <!-- Filter Pills -->
+        <div class="filter-pills" role="group" aria-label="Filter products by category">
+          <button class="filter-pill active" data-filter="all">All Gifts</button>
+          <button class="filter-pill" data-filter="electronics">Electronics</button>
+          <button class="filter-pill" data-filter="food">Food & Drink</button>
+          <button class="filter-pill" data-filter="beauty">Beauty & Spa</button>
+          <button class="filter-pill" data-filter="home">Home Decor</button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="products-grid" id="productsGrid" aria-live="polite" aria-label="Product listings">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <!-- Affiliate Disclosure Banner -->
+      <div class="reveal" style="max-width:1400px;margin:48px auto 0;text-align:center;">
+        <p style="color:var(--white-dim);font-size:0.82rem;line-height:1.7;padding:16px;background:var(--gold-soft);border:1px solid var(--gold-border);border-radius:12px;max-width:700px;margin:0 auto;">
+          <strong style="color:var(--gold-bright);">Affiliate Disclosure:</strong>
+          ZetsyBuy participates in the Amazon Associates Program. As an Amazon Associate we earn from qualifying purchases.
+        </p>
+      </div>
+
+    </section>
+
+    <!-- ============================================================
+         FOOTER
+         ============================================================ -->
+    <footer class="site-footer">
+      <div class="footer-inner">
+
+        <div class="footer-top">
+
+          <!-- Brand -->
+          <div class="footer-brand">
+            <a href="/" class="logo footer-logo" aria-label="ZetsyBuy Home">
+              <span class="logo-icon" aria-hidden="true">🎁</span>
+              <span class="logo-text">ZetsyBuy</span>
+            </a>
+            <p class="footer-tagline">
+              Curated Amazon gift ideas for every occasion. We help you find thoughtful, trending gifts that create lasting memories.
+            </p>
+            <div class="footer-disclosure">
+              🔗 ZetsyBuy participates in the Amazon Associates Program. As an Amazon Associate we earn from qualifying purchases.
+            </div>
+          </div>
+
+          <!-- Quick Links -->
+          <div>
+            <h3 class="footer-col-title">Quick Links</h3>
+            <ul class="footer-links">
+              <li><a href="#whatsapp-section">Order on WhatsApp</a></li>
+              <li><a href="#productsSection">Browse Gifts</a></li>
+              <li><a href="#productsSection">Birthday Gifts</a></li>
+              <li><a href="#productsSection">Anniversary Gifts</a></li>
+            </ul>
+          </div>
+
+          <!-- Legal -->
+          <div>
+            <h3 class="footer-col-title">Legal</h3>
+            <ul class="footer-links">
+              <li>
+                <a href="#" onclick="openModal('privacy'); return false;" aria-label="Open Privacy Policy">
+                  Privacy Policy
+                </a>
+              </li>
+              <li>
+                <a href="#" onclick="openModal('terms'); return false;" aria-label="Open Terms and Conditions">
+                  Terms &amp; Conditions
+                </a>
+              </li>
+              <li>
+                <a href="#" onclick="openModal('disclosure'); return false;" aria-label="Open Affiliate Disclosure">
+                  Affiliate Disclosure
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <p class="footer-copy">
+            © 2025 <span>ZetsyBuy</span>. All rights reserved.
+          </p>
+          <div class="footer-badge">
+            <span aria-hidden="true">🌟</span>
+            Amazon Associate
+          </div>
+        </div>
+
+      </div>
+    </footer>
+
+  </div><!-- /.page-wrap -->
+
+  <!-- ============================================================
+       MODAL (Legal Pages)
+       ============================================================ -->
+  <div class="modal-overlay" id="modalOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-box">
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-body" id="modalBody"></div>
+      <button class="btn-close-modal" onclick="closeModal()" aria-label="Close modal">
+        Close ✕
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" role="alert" aria-live="polite">
+    <span class="toast-icon">✨</span>
+    <span class="toast-msg"></span>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
