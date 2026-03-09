@@ -1,110 +1,4 @@
-/* ============================================
-   ZetsyBuy — Main JavaScript
-   ============================================ */
-
 'use strict';
-
-// ============================================
-// DEMO PRODUCTS (initial seed data)
-// ============================================
-const DEMO_PRODUCTS = [
-  {
-    id: 'prod_001',
-    name: 'Luxury Scented Candle Set – Vanilla & Amber Collection',
-    image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=luxury+scented+candle+set&tag=zetsybuy-20',
-    rating: 5,
-    category: 'Home Decor'
-  },
-  {
-    id: 'prod_002',
-    name: 'Premium Leather Wallet – Slim Minimalist Design',
-    image: 'https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=premium+leather+wallet+slim&tag=zetsybuy-20',
-    rating: 4,
-    category: 'Fashion'
-  },
-  {
-    id: 'prod_003',
-    name: 'Crystal Wine Glass Set – Hand-Blown Borosilicate',
-    image: 'https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=crystal+wine+glass+set&tag=zetsybuy-20',
-    rating: 5,
-    category: 'Kitchen'
-  },
-  {
-    id: 'prod_004',
-    name: 'Wireless Noise-Cancelling Headphones – Studio Quality',
-    image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=wireless+noise+cancelling+headphones&tag=zetsybuy-20',
-    rating: 5,
-    category: 'Electronics'
-  },
-  {
-    id: 'prod_005',
-    name: 'Artisan Coffee Gift Box – Single Origin Premium Blends',
-    image: 'https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=artisan+coffee+gift+set&tag=zetsybuy-20',
-    rating: 4,
-    category: 'Food & Drink'
-  },
-  {
-    id: 'prod_006',
-    name: 'Personalized Star Map Print – Custom Night Sky Poster',
-    image: 'https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=personalized+star+map+print&tag=zetsybuy-20',
-    rating: 5,
-    category: 'Art & Prints'
-  },
-  {
-    id: 'prod_007',
-    name: 'Smart Fitness Tracker Watch – Heart Rate & Sleep Monitor',
-    image: 'https://images.unsplash.com/photo-1579586337278-3befd40fd17a?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=smart+fitness+tracker+watch&tag=zetsybuy-20',
-    rating: 4,
-    category: 'Electronics'
-  },
-  {
-    id: 'prod_008',
-    name: 'Bamboo Spa Gift Basket – Luxury Self-Care Essentials',
-    image: 'https://images.unsplash.com/photo-1519415943484-9fa1873496d4?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=spa+gift+basket+luxury&tag=zetsybuy-20',
-    rating: 4,
-    category: 'Beauty & Spa'
-  },
-  {
-    id: 'prod_009',
-    name: 'Gourmet Chocolate Truffle Box – Belgian Dark & Milk',
-    image: 'https://images.unsplash.com/photo-1549007994-cb92caebd54b?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=gourmet+chocolate+truffle+box&tag=zetsybuy-20',
-    rating: 5,
-    category: 'Food & Drink'
-  },
-  {
-    id: 'prod_010',
-    name: 'Leather-Bound Journal – Handcrafted Vintage Diary',
-    image: 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=leather+bound+journal+handcrafted&tag=zetsybuy-20',
-    rating: 4,
-    category: 'Stationery'
-  },
-  {
-    id: 'prod_011',
-    name: 'Succulent & Cactus Plant Gift Set – Ceramic Pots',
-    image: 'https://images.unsplash.com/photo-1485955900006-10f4d324d411?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=succulent+cactus+plant+gift+set&tag=zetsybuy-20',
-    rating: 3,
-    category: 'Plants'
-  },
-  {
-    id: 'prod_012',
-    name: 'Instant Polaroid Camera – Vintage Retro Photo Printer',
-    image: 'https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=500&q=80',
-    affiliate: 'https://www.amazon.com/s?k=instant+polaroid+camera+retro&tag=zetsybuy-20',
-    rating: 5,
-    category: 'Photography'
-  }
-];
 
 // ============================================
 // STORAGE HELPERS
@@ -119,9 +13,8 @@ function getProducts() {
       if (Array.isArray(parsed) && parsed.length > 0) return parsed;
     }
   } catch (e) { /* ignore */ }
-  // Seed with demo products on first load
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(DEMO_PRODUCTS));
-  return DEMO_PRODUCTS;
+  // No demo products — return empty array
+  return [];
 }
 
 // ============================================
