@@ -1,5 +1,9 @@
-'use strict';
+const SUPABASE_URL = "https://beygdhiafnzyaryebces.supabase.co";
 
+const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJleWdkaGlhZm56eWFyeWViY2VzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNzEwOTIsImV4cCI6MjA4ODY0NzA5Mn0.bQhmoyB471Kg-kAGMo1nkY36rvQMfWKbB37ySuC26N0";
+
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+'use strict';
 // ============================================
 // STORAGE HELPERS
 // ============================================
