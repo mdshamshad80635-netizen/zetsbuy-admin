@@ -5,7 +5,7 @@ const SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 
-// products load from database
+// load products
 async function loadProducts() {
 
   const { data, error } = await supabase
@@ -13,7 +13,7 @@ async function loadProducts() {
     .select("*");
 
   if (error) {
-    console.error(error);
+    console.error("Error loading products:", error);
     return;
   }
 
@@ -24,28 +24,36 @@ async function loadProducts() {
 // show products on website
 function displayProducts(products) {
 
-  const container = document.querySelector("#products");
+  const container = document.querySelector("#productsGrid");
 
   if (!container) return;
 
   container.innerHTML = "";
 
-  products.forEach(p => {
+  products.forEach(product => {
 
     const card = `
       <div class="product-card">
 
-        <img src="${p.image}" alt="${p.name}" />
+        <img src="${product.image}" alt="${product.name}" />
 
-        <h3>${p.name}</h3>
+        <div class="product-info">
 
-        <div class="rating">
-          ⭐ ${p.rating}/5
+          <span class="product-category">${product.category || ""}</span>
+
+          <h3 class="product-title">
+            ${product.name}
+          </h3>
+
+          <div class="product-rating">
+            ⭐ ${product.rating}/5
+          </div>
+
+          <a href="${product.affiliate}" target="_blank" class="btn-amazon">
+            🛒 View on Amazon
+          </a>
+
         </div>
-
-        <a href="${p.affiliate}" target="_blank" class="btn">
-          View on Amazon
-        </a>
 
       </div>
     `;
@@ -57,4 +65,5 @@ function displayProducts(products) {
 }
 
 
+// start
 document.addEventListener("DOMContentLoaded", loadProducts);
