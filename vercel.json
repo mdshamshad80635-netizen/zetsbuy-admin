@@ -4,8 +4,8 @@
   "outputDirectory": ".",
   "routes": [
     {
-      "src": "/admin-secret",
-      "dest": "/admin-secret.html"
+      "src": "/admin",
+      "dest": "/zetsybuy-9k3x-admin-portal.html"
     },
     {
       "src": "/",
@@ -14,7 +14,7 @@
   ],
   "headers": [
     {
-      "source": "/admin-secret.html",
+      "source": "/zetsybuy-9k3x-admin-portal.html",
       "headers": [
         { "key": "X-Robots-Tag", "value": "noindex, nofollow" },
         { "key": "Cache-Control", "value": "no-store" }
